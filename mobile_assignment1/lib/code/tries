@@ -1,0 +1,11 @@
+// TextFormField(
+                //   decoration: InputDecoration(labelText: "n"),
+                //   validator: (value) {
+                //     if (value!.isEmpty ||
+                //         !RegExp(r'^[a-z A-Z]+$)').hasMatch(value!)) {
+                //       return "core";
+                //     }
+                //     else{return null;}
+
+                //   },
+                // ),
