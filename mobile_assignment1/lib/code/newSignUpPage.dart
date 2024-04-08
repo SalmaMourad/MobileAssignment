@@ -188,7 +188,7 @@ class _SignUpPageeState extends State<SignUpPagee> {
             SizedBox(height: 15),
           ],
         ),
-),
-);
-}
+      ),
+    );
+  }
 }
