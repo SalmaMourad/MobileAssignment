@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_assignment/code/constants.dart';
-import 'package:mobile_assignment/code/feild.dart';
+import 'package:mobile_assignment/code/constansts%20and%20fields/constants.dart';
+import 'package:mobile_assignment/code/constansts%20and%20fields/feild.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/newSignUpPage.dart';
-import 'package:mobile_assignment/code/DatabaseHelper.dart';
-import 'package:mobile_assignment/code/newSignUpPage.dart';
+import 'package:mobile_assignment/code/DataBaseHelper/DatabaseHelper.dart';
+import 'package:mobile_assignment/code/pages/newSignUpPage.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);

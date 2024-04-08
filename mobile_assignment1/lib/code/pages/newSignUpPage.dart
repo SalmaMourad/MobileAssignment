@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_assignment/code/constants.dart';
-import 'package:mobile_assignment/code/feild.dart';
-import 'package:mobile_assignment/code/genderFeild.dart';
-import 'package:mobile_assignment/code/levelCheck.dart';
+import 'package:mobile_assignment/code/constansts%20and%20fields/constants.dart';
+import 'package:mobile_assignment/code/constansts%20and%20fields/feild.dart';
+import 'package:mobile_assignment/code/constansts%20and%20fields/genderFeild.dart';
+import 'package:mobile_assignment/code/constansts%20and%20fields/levelCheck.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/LoginPage.dart';
-import 'package:mobile_assignment/code/DatabaseHelper.dart';
-import 'package:mobile_assignment/code/LoginPage.dart';
+import 'package:mobile_assignment/code/DataBaseHelper/DatabaseHelper.dart';
+import 'package:mobile_assignment/code/pages/LoginPage.dart';
 
 class SignUpPagee extends StatefulWidget {
   const SignUpPagee({Key? key}) : super(key: key);
