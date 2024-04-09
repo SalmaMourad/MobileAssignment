@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/LoginPage.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/newSignUpPage%20copy.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/newSignUpPage.dart';
-import 'package:mobile_assignment/code/newUserModel.dart';
-import 'package:mobile_assignment/code/LoginPage.dart';
-import 'package:mobile_assignment/code/newSignUpPage.dart';
+import 'package:mobile_assignment/code/constansts%20and%20fields/newUserModel.dart';
+import 'package:mobile_assignment/code/pages/LoginPage.dart';
+import 'package:mobile_assignment/code/pages/newSignUpPage.dart';
+import 'package:mobile_assignment/code/pages/profilePage.dart';
 
 
 void main() async {
@@ -23,6 +24,8 @@ class mobileApp extends StatelessWidget {
     return MaterialApp(
       routes: {
        LoginPage.id: (context) => LoginPage(),
+              ProfilePage.id: (context) => ProfilePage(),
+
        // SignUpPage.id: (context) => const SignUpPage(),
        // HomePage.id:(context) =>const HomePage(),
         SignUpPagee.id:(context) => const SignUpPagee(),

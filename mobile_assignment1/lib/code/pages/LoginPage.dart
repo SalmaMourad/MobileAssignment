@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_assignment/code/constansts%20and%20fields/constants.dart';
 import 'package:mobile_assignment/code/constansts%20and%20fields/feild.dart';
-import 'package:mobile_assignment/5alasMalo4Lazma/newSignUpPage.dart';
 import 'package:mobile_assignment/code/DataBaseHelper/DatabaseHelper.dart';
 import 'package:mobile_assignment/code/pages/newSignUpPage.dart';
+import 'package:mobile_assignment/code/pages/ProfilePage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
   static String id = "LoginPage";
-  final GlobalKey<FormState> formkey = GlobalKey();
+  final GlobalKey<FormState> formKey = GlobalKey();
   final DatabaseHelper dbHelper =
       DatabaseHelper(); // Initialize database helper
 
@@ -21,12 +22,17 @@ class LoginPage extends StatelessWidget {
     );
   }
 
+  Future<void> storeUserId(int userId) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt('userId', userId);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kprimaryColourWhite,
       body: Form(
-        key: formkey,
+        key: formKey,
         child: ListView(
           children: [
             const SizedBox(height: 60),
@@ -34,27 +40,45 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'our app',
+                  'YSH Faculty',
                   style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
+                    fontSize: 35,
+                     fontWeight: FontWeight.bold,
+                         fontStyle: FontStyle.italic, // Making the text italic
+
+                    // fontStyle: ,
+                    color: Color(0xFF9A4253),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 20),
+
+            Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'lib/assets/icons/logo3.jpg',
+                      width: 150,
+                      height: 150,
+                    )
+                  ],
+                ),
+             const   SizedBox(height: 15,),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+              
                 Text(
                   'Login to your account',
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.black,
+                    color: Colors.grey,
                   ),
                 ),
               ],
             ),
+            
             const SizedBox(height: 25),
             Feild(
               text: 'Email',
@@ -89,15 +113,17 @@ class LoginPage extends StatelessWidget {
                 Builder(
                   builder: (context) => ElevatedButton(
                     onPressed: () async {
-                      if (formkey.currentState?.validate() ?? false) {
+                      if (formKey.currentState?.validate() ?? false) {
                         // Validate credentials against database
                         final user = await dbHelper.getUserByEmailAndPassword(
                             emailController.text, passwordController.text);
                         if (user != null) {
                           // Login successful
                           showSnackBar(context, 'Login successful');
-                          // Proceed to next screen
-                          // Navigator.pushNamed(context, NextScreen.id);
+                          // Store user ID in local storage
+                          await storeUserId(user['id']);
+                          // Proceed to profile page
+                          Navigator.pushNamed(context, ProfilePage.id);
                         } else {
                           // Invalid credentials
                           showSnackBar(context, 'Invalid email or password');
@@ -135,7 +161,7 @@ class LoginPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
+     ),
+);
+}
 }

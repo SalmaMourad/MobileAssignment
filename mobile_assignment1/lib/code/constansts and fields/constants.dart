@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
 
-const Color kprimaryColourWhite = const Color.fromARGB(255, 248, 247, 242);
+const Color kprimaryColourWhite = const Color.fromARGB(255, 255, 255, 255);
 const Color kprimaryColourGreen = const Color(0xFF9A4253);
 const Color kprimaryColourBrown = const Color(0xFFA17740);
 String ktask = "task";
