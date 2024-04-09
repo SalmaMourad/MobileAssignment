@@ -24,7 +24,7 @@ class Feild extends StatefulWidget {
 }
 
 class _FeildState extends State<Feild> {
-  bool _obscureText = true;
+  bool _obscureText = false;
 //final String? Function(String?)? fieldValidator;
   String FieldValidatorr(String value) {
     if (value == null || value.isEmpty) {
