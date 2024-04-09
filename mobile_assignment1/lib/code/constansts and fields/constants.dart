@@ -16,15 +16,3 @@ TextEditingController confirmPasswordController = TextEditingController();
 TextEditingController firstNameController = TextEditingController();
 TextEditingController lastNameController = TextEditingController();
 TextEditingController phoneNumberController = TextEditingController();
-
-// List to store user data
-// List<UserModel> users = [];
-
-// UserModel user = UserModel(
-//   firstName: firstNameController.text,
-//   lastName: lastNameController.text,
-//   email: emailController.text,
-//   phoneNumber: phoneNumberController.text,
-//   password: passwordController.text,
-//   confirmPassword: confirmPasswordController.text,
-// );

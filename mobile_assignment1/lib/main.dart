@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/LoginPage.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/newSignUpPage%20copy.dart';
 import 'package:mobile_assignment/5alasMalo4Lazma/newSignUpPage.dart';
-import 'package:mobile_assignment/code/constansts%20and%20fields/newUserModel.dart';
+import 'package:mobile_assignment/5alasMalo4Lazma/newUserModel.dart';
 import 'package:mobile_assignment/code/pages/LoginPage.dart';
 import 'package:mobile_assignment/code/pages/newSignUpPage.dart';
 import 'package:mobile_assignment/code/pages/profilePage.dart';

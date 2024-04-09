@@ -33,11 +33,7 @@ class _FeildState extends State<Feild> {
       print("here is else");
       if (value.length < 8) {
         return 'your password must be eigth or more';
-        // MinLengthValidator(8,
-        //     errorText: 'Password must be at least 4 digit');
       }
-      // MinLengthValidator(8,
-      //     errorText: 'Password must be at least 4 digit');
     }
     return 'done';
   }
