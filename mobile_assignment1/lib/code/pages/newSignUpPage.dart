@@ -108,6 +108,7 @@ class _SignUpPageState extends State<SignUpPagee> {
               text: 'Password',
               icon: const Icon(Icons.lock_outline),
               controller: passwordController,
+              obscureText: true,
               isPassword:
                   true, // Set isPassword to true to indicate it's a password field
               fieldValidator: (value) {
@@ -125,6 +126,7 @@ class _SignUpPageState extends State<SignUpPagee> {
               text: 'Confirm Password',
               icon: const Icon(Icons.password_outlined),
               isPassword: true,
+              obscureText: true,
               controller: confirmPasswordController,
               fieldValidator: (value) {
                 if (value == null || value.isEmpty) {

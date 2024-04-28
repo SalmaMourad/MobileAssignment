@@ -95,6 +95,8 @@ class LoginPage extends StatelessWidget {
               text: 'Password',
               icon: const Icon(Icons.lock_outline),
               controller: passwordController,
+              obscureText: true,
+              isPassword: true,
               fieldValidator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter your password';

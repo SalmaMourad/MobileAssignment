@@ -12,6 +12,7 @@ class Feild extends StatefulWidget {
     this.controller,
     this.fieldValidator,
     this.isPassword = false,
+    this.obscureText = false,
   });
 
   String text;
@@ -19,12 +20,13 @@ class Feild extends StatefulWidget {
   TextEditingController? controller;
   FormFieldValidator<String>? fieldValidator;
   final bool isPassword;
+  bool obscureText = false;
+
   @override
   State<Feild> createState() => _FeildState();
 }
 
 class _FeildState extends State<Feild> {
-  bool _obscureText = false;
 //final String? Function(String?)? fieldValidator;
   String FieldValidatorr(String value) {
     if (value == null || value.isEmpty) {
@@ -46,7 +48,7 @@ class _FeildState extends State<Feild> {
         children: [
           TextFormField(
             controller: widget.controller,
-            obscureText: _obscureText,
+            obscureText: widget.obscureText,
             decoration: InputDecoration(
               focusColor: kprimaryColourGreen,
               icon: widget.icon, // User icon on the left
@@ -57,11 +59,13 @@ class _FeildState extends State<Feild> {
               suffixIcon: widget.isPassword
                   ? IconButton(
                       icon: Icon(
-                        _obscureText ? Icons.visibility_off : Icons.visibility,
+                        widget.obscureText
+                            ? Icons.visibility_off
+                            : Icons.visibility,
                       ),
                       onPressed: () {
                         setState(() {
-                          _obscureText = !_obscureText;
+                          widget.obscureText = !widget.obscureText;
                         });
                       },
                     )
